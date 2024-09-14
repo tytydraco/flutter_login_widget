@@ -32,6 +32,7 @@ class LoginFieldWidget extends StatefulWidget {
 
   @override
   _LoginFieldWidgetState createState() => _LoginFieldWidgetState();
+}
 
 class _LoginFieldWidgetState extends State<LoginFieldWidget>{
   late bool _obscureText;
