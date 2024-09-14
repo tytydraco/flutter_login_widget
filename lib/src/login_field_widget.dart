@@ -20,25 +20,24 @@ class LoginFieldWidget extends StatefulWidget {
 
   /// Automatically focus on this element when the widget is rendered.
   final bool autofocus;
-  
-  const LoginFieldWidget({
-    super.key,
-    required this.controller,
-    this.validator,
-    this.hintText = '',
-    this.obscureText = false,
-    this.autofocus = false
-  });
+
+  const LoginFieldWidget(
+      {super.key,
+      required this.controller,
+      this.validator,
+      this.hintText = '',
+      this.obscureText = false,
+      this.autofocus = false});
 
   @override
   _LoginFieldWidgetState createState() => _LoginFieldWidgetState();
 }
 
-class _LoginFieldWidgetState extends State<LoginFieldWidget>{
+class _LoginFieldWidgetState extends State<LoginFieldWidget> {
   late bool _obscureText;
 
   @override
-  void initState(){
+  void initState() {
     super.initState;
     _obscureText = widget.obscureText;
   }
@@ -51,10 +50,15 @@ class _LoginFieldWidgetState extends State<LoginFieldWidget>{
         autofocus: widget.autofocus,
         controller: widget.controller,
         decoration: InputDecoration(
-          hintText: widget.hintText,
-          border: const OutlineInputBorder(),
-          suffixIcon: widget.obscureText? InkWell(child: Icon(Icons.remove_red_eye), onTap: ()=>setState((){_obscureText=!_obscureText}):null
-        ),
+            hintText: widget.hintText,
+            border: const OutlineInputBorder(),
+            suffixIcon: widget.obscureText
+                ? InkWell(
+                    child: Icon(Icons.remove_red_eye),
+                    onTap: () => setState(() {
+                          _obscureText = !_obscureText;
+                        }))
+                : null),
         obscureText: _obscureText,
         textInputAction: TextInputAction.next,
         validator: widget.validator,
