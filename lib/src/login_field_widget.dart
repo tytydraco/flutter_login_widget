@@ -26,6 +26,7 @@ class LoginFieldWidget extends StatefulWidget {
       required this.controller,
       this.validator,
       this.hintText = '',
+      this.enabled = true,
       this.obscureText = false,
       this.autofocus = false});
 
@@ -47,6 +48,7 @@ class _LoginFieldWidgetState extends State<LoginFieldWidget> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: TextFormField(
+        enabled: widget.enabled,
         autofocus: widget.autofocus,
         controller: widget.controller,
         decoration: InputDecoration(
