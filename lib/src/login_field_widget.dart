@@ -18,6 +18,9 @@ class LoginFieldWidget extends StatefulWidget {
   /// Hides the input from the user.
   final bool obscureText;
 
+  /// Enable input
+  final bool enabled;
+
   /// Automatically focus on this element when the widget is rendered.
   final bool autofocus;
 
